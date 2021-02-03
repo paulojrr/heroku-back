@@ -1,7 +1,7 @@
 import express from 'express';
 import bodyParser from 'body-parser';
 import cors from 'cors';
-import routes from './routes/gradeRouter.js';
+import { gradeRouter } from './routes/gradeRouter.js';
 
 import { db } from './models/index.js';
 
@@ -27,6 +27,6 @@ app.get('/', (req, res) => {
   res.send('API em execucao');
 });
 
-app.use(routes);
+app.use(gradeRouter);
 
 app.listen(process.env.PORT || 8081, () => {});
