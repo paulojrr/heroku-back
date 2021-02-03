@@ -1,6 +1,7 @@
 import express from 'express';
 import bodyParser from 'body-parser';
 import cors from 'cors';
+import routes from './routes/gradeRouter';
 
 import { db } from './models/index.js';
 
@@ -25,5 +26,7 @@ app.use(cors());
 app.get('/', (req, res) => {
   res.send('API em execucao');
 });
+
+app.use(routes);
 
 app.listen(process.env.PORT || 8081, () => {});
